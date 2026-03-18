@@ -3,5 +3,5 @@ matplotlib
 koreanize-matplotlib
 scikit-learn
 setuptools
-streamlit
+streamlit>=1.38.0
 plotly
