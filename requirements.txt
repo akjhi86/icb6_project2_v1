@@ -4,3 +4,4 @@ koreanize-matplotlib
 scikit-learn
 setuptools
 streamlit
+plotly
