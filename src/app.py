@@ -15,8 +15,16 @@ def load_data():
     data_nat_path = os.path.join(base_dir, "data", "raw", "visitor_by_nationality.csv")
     data_trans_path = os.path.join(base_dir, "data", "raw", "visitor_by_transport.csv")
     
-    df_nat = pd.read_csv(data_nat_path)
-    df_trans = pd.read_csv(data_trans_path)
+    # 스트림릿 클라우드(리눅스)와 로컬(윈도우) 간 한글 CSV 인코딩 충돌 방지 로직
+    try:
+        df_nat = pd.read_csv(data_nat_path, encoding='utf-8-sig')
+    except UnicodeDecodeError:
+        df_nat = pd.read_csv(data_nat_path, encoding='cp949')
+        
+    try:
+        df_trans = pd.read_csv(data_trans_path, encoding='utf-8-sig')
+    except UnicodeDecodeError:
+        df_trans = pd.read_csv(data_trans_path, encoding='cp949')
     
     df_trans['기준연월'] = pd.to_datetime(df_trans['기준연월'])
     df_trans = df_trans.sort_values('기준연월')
