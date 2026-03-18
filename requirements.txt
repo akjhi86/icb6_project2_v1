@@ -1,0 +1,6 @@
+pandas
+matplotlib
+koreanize-matplotlib
+scikit-learn
+setuptools
+streamlit
