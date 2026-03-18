@@ -116,3 +116,12 @@ fig10.update_traces(textposition='inside', textinfo='percent+label')
 st.plotly_chart(fig10, use_container_width=True)
 
 st.success("데이터 표와 반응형 차트를 통해 마우스를 올려 모든 세부 숫자(값)를 상세히 확인하실 수 있습니다!")
+
+st.divider()
+
+# --- 데이터 출처 (Data Source) ---
+st.markdown("""
+**📊 데이터 출처 (Data Source)**  
+본 대시보드에 사용된 '방한 외래관광객' 및 '교통수단별' 통계 원본 데이터는 **한국문화관광연구원(KCTI)**의 출입국관광통계서비스를 기반으로 집계 및 가공되었습니다.  
+👉 [한국문화관광연구원 관광지식정보시스템 바로가기 (know.tour.go.kr)](https://know.tour.go.kr/)
+""")
